@@ -54,7 +54,7 @@ total_solar_radiation AS
 
         FROM 
             sweater_weather.jgranadino.climatology_day AS cd
-            JOIN sweater_weather.jgranadino.states AS state ON COLLATE(cd.state, 'en-ci') = COLLATE(state.state_name, 'en-ci') --found descrepancy in review, discovered in Snowflake documentation that its Case Sensitive and so it missed portion of Michigan data. Used COLLATE to account for the all data.
+            JOIN sweater_weather.jgranadino.states AS state ON COLLATE(cd.state, 'en-ci') = COLLATE(state.state_name, 'en-ci')
 
         WHERE 
             cd.country = 'US'
